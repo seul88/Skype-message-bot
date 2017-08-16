@@ -75,10 +75,9 @@ bot.dialog('/', function(session, args) {
 
   savedAddress = session.message.address;
 
-  var message = 'Witaj, za moment otrzymasz wiadomość zwrotną z numerem ID konwersacji.';
+  var message = 'Hello, your conversation ID is:';
   session.send(message);
-  session.send('ID:  '+savedAddress.id);
-  session.send('CONVERSATION.ID:  '+savedAddress.conversation.id);
+  session.send(savedAddress.conversation.id);
 
   setTimeout(() => {
    sendProactiveMessage(savedAddress);
